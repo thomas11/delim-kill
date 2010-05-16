@@ -1,4 +1,4 @@
-# delim-kill.el --- Kill text between bounding characters
+# delim-kill.el --- Kill text between delimiters.
 
 Copyright (C) 2010 Thomas Kappler
 
@@ -16,16 +16,16 @@ Licensed under the [GPL version 3](http://www.gnu.org/licenses/) or later.
 Kill text between two delimiters, preserving structure.
 
 delim-kill.el contains a single convenience function for editing
-structured data: delim-kill. Given two characters FROM and TO,
-delim-kill kills the text between the first occurence of FROM
-before point and the first occurence of TO after point. FROM and TO
-may be identical.
+structured data: delim-kill. Given two characters FROM and TO, it
+kills the text between the first occurence of FROM before point and
+the first occurence of TO after point. FROM and TO may be
+identical.
 
 If FROM and TO are not identical, the function preserves the
 balance between the two characters: For each FROM that is
 encountered while looking for TO, one additional TO is required;
 and vice versa. For example, in "{ foo X{bar} baz }", with X being
-point and "{" as TO and "}" as FROM, the text "{ foo {bar} baz }"
+point and "{" and "}" as delimiters, the text "{ foo {bar} baz }"
 will be killed, not "{ foo {bar}".
 
 delim-kill is useful in programming and in editing other files with
