@@ -78,7 +78,7 @@ moves to the next one, in both directions.
 If beginning or end of buffer are reached, the function stops and
 treats point-min resp. point-max as if the character had been
 found there."
-  (interactive "cFrom: \ncTo: \nd\np")
+  (interactive "cFrom: \ncTo: \nd\nP")
   (let* ((from (delim-find-char-balanced-backward from-char to-char))
          (to   (delim-find-char-balanced-forward  from-char to-char)))
     (if (and from to)
